@@ -1,7 +1,9 @@
 #!/bin/bash
 
-
-if [[ "$1" = "--date" || "$1" = "-d" ]]; then
+if [ "$1" = "--init" ]; then
+	git clone https://github.com/BreadEnthusiast/Lab4
+	export PATH=$PATH:$(pwd)
+elif [[ "$1" = "--date" || "$1" = "-d" ]]; then
 	echo "Dzisiejsza data: $(date +%Y-%m-%d)"
 elif [[ "$1" = "--logs" || "$1" = "-l" ]]; then
 	if [ -z "$2" ]; then
