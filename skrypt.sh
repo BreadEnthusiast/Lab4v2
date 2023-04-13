@@ -5,6 +5,20 @@ if [ "$1" = "--init" ]; then
 	export PATH=$PATH:$(pwd)
 elif [[ "$1" = "--date" || "$1" = "-d" ]]; then
 	echo "Dzisiejsza data: $(date +%Y-%m-%d)"
+elif [[ "$1" = "--error" || "$1" = "-e" ]]; then
+	if [ -z "$2" ]; then
+		for i in {1..100}; do 
+			errorname="error$i.txt"
+			echo "$errorname stworzony przez skrypt.sh dnia $(date +%Y-%m-%d)" >> $errorname
+		done
+		echo "Utworzono 100 plików errorx.txt"
+	else
+		num_errors=$2
+		for i in $(seq 1 $num_errors); do
+			errorname="error$i.txt
+			echo "$errorname stworzony przez skrypt.sh dnia $(date +%Y-%m-%d)" >> $errorname
+		done
+		echo "Utworzono $num_errors plików errorx.txt"
 elif [[ "$1" = "--logs" || "$1" = "-l" ]]; then
 	if [ -z "$2" ]; then
 		echo "Użycie: $0 --logs <liczba plików> | -l <liczba plików>"
