@@ -32,9 +32,11 @@ elif [[ "$1" = "--logs" || "$1" = "-l" ]]; then
 	fi
 elif [[ "$1" = "--help" || "$1" = "-h" ]]; then
   echo "Użycie: $0 --date | --logs <liczba plików> | --help"
-  echo "  --date lub -d                 Wyświetla dzisiejszą datę."
-  echo "  --logs lub -l <liczba plików> Tworzy określoną liczbę plików logx.txt."
-  echo "  --help lub -h                 Wyświetla krótką pomoc."
+  echo "  --date lub -d                  Wyświetla dzisiejszą datę."
+  echo "  --logs lub -l <liczba plików>  Tworzy określoną liczbę plików logx.txt."
+  echo "  --help lub -h                  Wyświetla krótką pomoc."
+  echo "  --error lub -e <liczba plików> Tworzy określoną liczbę plików errorx.txt (w przypadku braku liczby, utworzy ich 100"
+  echo "  --init                         klonuje całe repozytorium do katalogu w którym został uruchomiony"
 else
-  echo "Użycie: $0 --date | -d | --logs <liczba plików> | -l <liczba plików> | --help | -h"
+  echo "Użycie: $0 --date | -d | --logs <liczba plików> | -l <liczba plików> | --help | -h | --init | --error <liczba plików> | -e <liczba plików>"
 fi
